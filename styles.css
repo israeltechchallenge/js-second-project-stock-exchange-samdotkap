@@ -1,0 +1,10 @@
+#search-bar{
+    margin-top: 40px;
+    margin-left:40px
+}
+.spinner-border{
+    visibility: hidden;
+}
+.spinner-border.display{
+    visibility:visible
+}
