@@ -8,3 +8,9 @@
 .spinner-border.display{
     visibility:visible
 }
+.spinner-border2{
+    visibility: hidden;
+}
+.spinner-border2.display{
+    visibility:visible
+}
