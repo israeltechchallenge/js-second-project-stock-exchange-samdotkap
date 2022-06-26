@@ -3,6 +3,8 @@ let container= document.querySelector(`.company-container`);
 let container2= document.querySelector(`.company-container2`);
 var urlParams = new URLSearchParams(window.location.search);
 var extractedSymbol=urlParams.get(`symbol`)
+let prices=[]
+let dates=[]
 
  async function getSymbol(){
     try{
@@ -16,7 +18,6 @@ var extractedSymbol=urlParams.get(`symbol`)
     }
 }
 
-// export {getSymbol};
 async function displayCo(){
     try{
         const data= await getSymbol();
@@ -46,9 +47,6 @@ async function displayCo(){
         console.log(error)
     }
 }
-// export {stockDifferential}
-let prices=[]
-let dates=[]
 
 async function history(){
     try{
@@ -69,6 +67,7 @@ async function history(){
                 datasets: [{
                     fill: false,
                     lineTension: 0,
+                    label: `Stock prices`,
                     backgroundColor: "rgba(0,0,255,1.0)",
                     borderColor: "rgba(0,0,255,0.1)",
                     data: prices

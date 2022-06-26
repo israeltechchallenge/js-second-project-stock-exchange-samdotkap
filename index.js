@@ -26,7 +26,6 @@ async function displayList(){
 
             var link= `<img src="${xData.profile.image}"> <a href="./company.html?symbol=${item.symbol}" target="_blank">${item.name} , ${item.symbol}</a> ${xData.profile.changesPercentage}</br> `
             
-            console.log(xData)
             list.innerHTML+= link
         }    
         loader.remove(`display`)
@@ -36,17 +35,17 @@ async function displayList(){
     }
 }
 
-async function displayMarquee(){
-    const data = await present10();
-    console.log(data)
-    for(let item of data){
-        const response = await fetch(`https://stock-exchange-dot-full-stack-course-services.ew.r.appspot.com/api/v3/company/profile/${item.symbol}`)
-        const xData= await response.json()
-        marq.innerHTML+= `${item.symbol}: ${xData.profile.changesPercentage}`
+// async function displayMarquee(){
+//     const data = await present10();
+//     console.log(data)
+//     for(let item of data){
+//         const response = await fetch(`https://stock-exchange-dot-full-stack-course-services.ew.r.appspot.com/api/v3/company/profile/${item.symbol}`)
+//         const xData= await response.json()
+//         marq.innerHTML+= `${item.symbol}: ${xData.profile.price}`
 
-    }
-}
+//     }
+// }
 
 btn.addEventListener("click",displayList);
-displayMarquee()
+// displayMarquee()
 
